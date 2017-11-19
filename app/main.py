@@ -13,11 +13,11 @@ elem = browser.find_element_by_tag_name("body")
 no_of_pagedowns = 0
 
 while no_of_pagedowns:
-    elem.send_keys(Keys.PAGE_DOWN)
-    time.sleep(0.2)
+    elem.send_keys(Keys.END)
+    time.sleep(1)
     no_of_pagedowns -= 1
 
-emodjidata = []
+reviews = []
 
 cards = browser.find_elements_by_class_name("card_default")
 counter = 1
@@ -38,8 +38,9 @@ for each in cards:
         "emojies": emoji_list,
         "text": text[0].text
     }
+
     counter += 1
 
-    emodjidata.append(data)
+    reviews.append(data)
 
-print(json.dumps(emodjidata, sort_keys=True, indent=4, ensure_ascii=False))
+print(json.dumps(reviews, sort_keys=True, indent=4, ensure_ascii=False))

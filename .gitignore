@@ -1,0 +1,7 @@
+/.vscode
+/bin
+/include
+/lib
+/selenium
+pip-selfcheck.json
+pyvenv.cfg
